@@ -9,3 +9,6 @@ Chan XHD, Sim YE, Chan YH, Poopalalingam R, Abdullah HR
 Results: Observed mortality was 0.6%. The CARES surgical risk calculator, consisting of 9 variables were constructed. AUROC in the derivation and validation cohorts for mortality were 0.934(0.917-0.950) and 0.934(0.912-0.956) respectively, while the AUROC for ICU admission was 0.863 (0.848-0.878) and 0.837(0.808-0.868) respectively. CARES also performed better than ASA-PS in terms of AUROC comparison.
 
 **Conclusion:** The development of the CARES surgical risk calculator allows for a simplified yet accurate prediction of both postoperative mortality and need for ICU admission after surgery. 
+
+
+This website hosts an [online version of the calculator](calculator.md).
