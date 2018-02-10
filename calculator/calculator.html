@@ -106,6 +106,13 @@ dd {
 </head>
 <body>
   <main id="app">
+    <div style="display: flex; flex-direction: row">
+      <img src="../images/SmallLogo.png" style="height: 100px; margin-bottom: -25px; flex: 0 0 auto;"
+        alt="CARES Surgical Risk Calculator"/>
+      <div style="flex: 1 1 auto"></div>
+      <img src="../images/singhealth-dukenus.jpg" style="height: 80px; flex: 0 0 auto;"
+        alt="SingHealth Duke-NUS Academic Medical Centre"/>
+    </div>
     <div class="two-column">
       <div class="column">
 
@@ -203,7 +210,7 @@ dd {
         <section>
           <h2>Co-morbidities</h2>
           <button @click="ASAScore = 0, IHDScore = 0, chfType = 0, anaemiaScore = 0">
-            No co-morbidities
+            No Co-morbidities
           </button>
 
 
