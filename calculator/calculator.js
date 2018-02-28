@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     },
     methods: {
-      procedureSelectResult(organ, procedureName, procedureRisk) {
+      procedureSelectResult: function (organ, procedureName, procedureRisk) {
         this.procedure.selectedProcedure = organ + ' -- ' + procedureName
         this.procedure.selectedProcedureRisk = procedureRisk.charAt(0)
           .toUpperCase()
