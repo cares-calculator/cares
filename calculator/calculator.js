@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
           : (this.procedure.selectedProcedureRisk === 'M') ? 2
           : (this.procedure.selectedProcedureRisk === 'L') ? 0
           : null
-      },
+      }
 
     },
     methods: {
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
           .toUpperCase()
 
         this.procedure.searchQuery = ''
-      },
+      }
     }
   }).$mount('#app')
 })
