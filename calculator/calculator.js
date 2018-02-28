@@ -144,7 +144,9 @@ document.addEventListener('DOMContentLoaded', function () {
           return null
         }
         for (let i = 0; i < this.risks.length; i++) {
-          const [min, max] = this.risks[i]
+          const min = this.risks[0]
+          const max = this.risks[1]
+          // const [min, max] = this.risks[i]
           if (min <= this.totalScore && this.totalScore <= max) {
             return i
           }
