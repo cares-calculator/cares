@@ -175,6 +175,22 @@
 </section>
 </div>
 
+<script type="text/x-template" id="inline-info-template">
+  <div>
+    <div style="display: inline">
+      <slot name="title"></slot>
+      <span class="inline-info-i"  @click="shown = !shown">
+        ⓘ
+      </span>
+    </div>
+    <transition name="expand">
+      <div v-if="shown" class="inline-info-style">
+        <slot></slot>
+      </div>
+    </transition>
+  </div>
+</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"></script>
 <script src="calculator/surgeryTypes.js"></script>
