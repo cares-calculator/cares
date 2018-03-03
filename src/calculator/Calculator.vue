@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <div>
     <div class="two-column">
       <div class="column">
 
@@ -178,7 +178,7 @@
         </dl>
       </div><!--column-->
     </section>
-  </main>
+  </div>
 </template>
 <script>
 import InlineInfo from './InlineInfo.vue'
