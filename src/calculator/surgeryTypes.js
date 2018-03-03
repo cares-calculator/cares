@@ -1,4 +1,4 @@
-window.SURGERY_TYPES = [
+export default [
 ['Aorta', 'Aorta, Abdominal Aortic Aneurysm, Excision and Insertion of Graft', 'H'],
 ['Aorta', 'Aorta, Aneurysm, Juxtarenal Type', 'H'],
 ['Aorta', 'Aorta, Descending Aortic Aneurysm, Excision and Insertion of Graft', 'H'],
