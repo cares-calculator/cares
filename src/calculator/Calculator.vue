@@ -29,10 +29,15 @@
 
             <div v-if="procedure.searchQuery"
                 style="height: 200px; overflow: auto; border: solid 1px black; max-height: 80vh">
-              <template v-for="[organ, procedureName, procedureRisk] in procedure.searchResults">
+              <template v-for="[organ, procedureName, procedureRisk] in procedure.searchResults.slice(0, 200)">
                 <div class="search-result-entry"
                   v-on:click="procedureSelectResult(organ, procedureName, procedureRisk)">
                   {{ organ }} -- {{procedureName}}
+                </div>
+              </template>
+              <template v-if="procedure.searchResults.length > 200">
+                <div class="search-result-entry">
+                  <em>(... additional results hidden -- refine your search query)</em>
                 </div>
               </template>
             </div>
