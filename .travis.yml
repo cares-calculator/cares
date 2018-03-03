@@ -3,7 +3,6 @@ node_js:
   - '9'
 script:
   - npm run build
-before_deploy: 'rm -r node_modules'
 deploy:
   provider: pages
   github-token: $GITHUB_TOKEN
