@@ -36,7 +36,6 @@ h2 {
 header, main, footer {
   max-width: 800px;
   margin: 0 auto;
-  display: block; /* Required for IE 11 */
 }
 footer {
   margin-top: 200px;
@@ -122,7 +121,7 @@ dd {
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-
+        
           <div style="display: flex; flex-direction: row">
             <img src="{{ '/images/SmallLogo.png' | relative_url }}" style="height: 100px; margin-bottom: -25px; flex: 0 0 auto;"
               alt="CARES Surgical Risk Calculator"/>
