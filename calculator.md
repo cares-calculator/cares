@@ -6,3 +6,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"></script>
 <script src="calculator/calculator.bundle.js"></script>
 {% endraw %}
+
+See [original paper](http://bmjopen.bmj.com/content/8/3/e019427).
