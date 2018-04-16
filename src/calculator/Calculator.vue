@@ -87,8 +87,10 @@
 
           <div class="field">
             <inline-info>
-              <span class="field-name" slot="title">RDW:</span>
-              Red-cell distribution width is a measure of the variation in...
+              <span class="field-name" slot="title">Red cell distribution width (RDW):</span>
+              Red cell distribution width (RDW) is reported as a coefficient of variation (percentage)
+              of red blood cell volume in the automated full blood count. The chosen value of 15.7% was
+              the upper limit of normal range in our laboratory.
             </inline-info>
             <label v-for="[category, score] in RDWScores">
               <input type="radio" :value="score" v-model="RDWScore" />
@@ -105,9 +107,13 @@
             No Co-morbidities
           </button>
 
-
           <div class="field">
-            <div class="field-name">Anaemia Score:</div>
+            <inline-info>
+              <span class="field-name" slot="title">Anaemia Score:</span>
+              <p>Defined according to WHO definition</p>
+              <p>Mild anaemia – In men, Hb between 11.0-12.9g/dL; in women, Hb between 11.0-11.9g/dL</p>
+              <p>Moderate/severe anaemia – Hb≤ 10.9g/dL</p>
+            </inline-info>
             <label v-for="[category, score] in anaemiaScores">
               <input type="radio" :value="score" v-model="anaemiaScore" />
               {{ category }}
@@ -115,7 +121,16 @@
           </div>
 
           <div class="field">
-            <div class="field-name">ASA Score:</div>
+            <inline-info>
+              <span class="field-name" slot="title">American Society of Anesthesiologists (ASA) Physical Status (PS) Score:</span>
+              <ol>
+                <li>Healthy person.</li>
+                <li>Mild systemic disease.</li>
+                <li>Severe systemic disease.</li>
+                <li>Severe systemic disease that is a constant threat to life.</li>
+                <li>A moribund person who is not expected to survive without the operation.</li>
+              </ol>
+            </inline-info>
             <label v-for="[category, score] in ASAScores">
               <input type="radio" :value="score" v-model="ASAScore" />
               {{ category }}
@@ -123,14 +138,25 @@
           </div>
 
           <div class="field">
-            <div class="field-name">History of Ischaemic Heart Disease:</div>
+            <inline-info>
+              <span class="field-name" slot="title">History of Ischaemic Heart Disease:</span>
+              As defined in the Revised Cardiac Risk Index (RCRI)<sup>2</sup> - History of myocardial infarction (MI);
+              history of positive exercise test; current chest pain considered due to myocardial ischaemia;
+              use of nitrate therapy or ECG with pathological Q waves. One of the components of Revised
+              Cardiac Risk Index (RCRI)<sup>2</sup>
+            </inline-info>
             <label v-for="[category, score] in IHDScores">
               <input type="radio" :value="score" v-model="IHDScore" />
               {{ category }}
             </label>
           </div>
           <div class="field">
-            <div class="field-name">History of Congestive Heart Failure:</div>
+            <inline-info>
+              <span class="field-name" slot="title">History of Congestive Heart Failure:</span>
+              As defined in the Revised Cardiac Risk Index (RCRI)<sup>2</sup> - Pulmonary edema, bilateral
+              rales or S3 gallop; paroxysmal nocturnal dyspnea; chest x-ray (CXR) showing
+              pulmonary vascular redistribution
+            </inline-info>
             <label v-for="[category, score] in chfTypes">
               <input type="radio" :value="score" v-model="chfType" />
               {{ category }}
