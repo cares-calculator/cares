@@ -123,10 +123,16 @@ dd {
     <div id="header_wrap" class="outer">
         <header class="inner">
 
-          <div style="display: flex; flex-direction: row">
+          <div style="display: flex; flex-direction: row; align-items: center">
             <img src="{{ '/images/SmallLogo.png' | relative_url }}" style="height: 100px; margin-bottom: -25px; flex: 0 0 auto;"
               alt="CARES Surgical Risk Calculator"/>
-            <div style="flex: 1 1 auto"></div>
+            <div style="flex: 1 1 auto; text-align: center">
+              <a href="{{ '/calculator.md' | relative_url }}">Calculator</a>
+              |
+              <a href="{{ '/publications.md' | relative_url }}">Publications</a
+              |
+              <a href="{{ '/trials.md' | relative_url }}">Trials</a>
+            </div>
             <img src="{{ '/images/singhealth-dukenus.jpg' | relative_url }}" style="height: 80px; flex: 0 0 auto;"
               alt="SingHealth Duke-NUS Academic Medical Centre"/>
           </div>
