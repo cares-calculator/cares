@@ -1,4 +1,4 @@
-Welcome to the **Combined Assessment of Risk Encountered in Surgery (CARES)** surgical risk calculator. This calculator was derived from a cohort of 79,914 patients in Singapore and allows for a simplified yet accurate prediction of both postoperative mortality and need for ICU admission after surgery. The development of this calculator was published [here] (http://bmjopen.bmj.com/content/8/3/e019427)<sup>1</sup>. Please select the correct variables to generate the risk estimates.
+Welcome to the **Combined Assessment of Risk Encountered in Surgery (CARES)** surgical risk calculator. This calculator was derived from a cohort of 79,914 patients in Singapore and allows for a simplified yet accurate prediction of both postoperative mortality and need for ICU admission after surgery. The development of this calculator was published [here](http://bmjopen.bmj.com/content/8/3/e019427)<sup>1</sup>. Please select the correct variables to generate the risk estimates.
 
 
 {% raw %}
