@@ -8,6 +8,17 @@
     <meta name="description" content="{{ site.title | default: site.github.repository_name }} : {{ site.description | default: site.github.project_tagline }}">
 
 <style>
+nav a {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(38, 91, 150);
+  text-decoration: none;
+}
+  
+nav a:hover {
+  text-decoration: underline;
+}
+  
 body, div, li, th, td, p {
   font-family: Tahoma, Sans-serif;
   font-size: 14px;
@@ -127,13 +138,13 @@ dd {
           <div style="display: flex; flex-direction: row; align-items: center">
             <img src="{{ '/images/SmallLogo.png' | relative_url }}" style="height: 100px; margin-bottom: -25px; flex: 0 0 auto;"
               alt="CARES Surgical Risk Calculator"/>
-            <div style="flex: 1 1 auto; text-align: center">
+            <nav style="flex: 1 1 auto; text-align: center">
               <a href="{{ '/calculator.md' | relative_url }}">Calculator</a>
               |
               <a href="{{ '/publications.md' | relative_url }}">Publications</a>
               |
               <a href="{{ '/trials.md' | relative_url }}">Trials</a>
-            </div>
+            </nav>
             <img src="{{ '/images/singhealth-dukenus.jpg' | relative_url }}" style="height: 80px; flex: 0 0 auto;"
               alt="SingHealth Duke-NUS Academic Medical Centre"/>
           </div>
