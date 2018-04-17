@@ -1,6 +1,6 @@
 The Singapore General Hospital (SGH) Perioperative Center selectively participates in rigorous local and multicenter international trials that aim to improve patient outcomes.
 
-Below are the trials that we are currently ongoing:
+Below are the trials that are currently ongoing:
 
 **Preoperative Anemia Among the Elderly Undergoing Major Abdominal Surgery (PANAMA): Impact on Healthcare Outcomes**
 
