@@ -17,3 +17,5 @@ The CARES Surgical Risk Calculator estimates the chance of unfavourable outcomes
 **Reference**
 1. Chan DXH, Sim YE, Chan YH, Poopalalingam R, Abdullah HR. Development of the Combined Assessment of Risk Encountered in Surgery (CARES) surgical risk calculator for prediction of postsurgical mortality and need for intensive care unit admission risk: a single-center retrospective study. BMJ Open. 2018 Mar 23;8(3):e019427. [Pubmed](https://www.ncbi.nlm.nih.gov/m/pubmed/29574442/) [Original article](http://bmjopen.bmj.com/content/8/3/e019427)
 2. Lee TH, Marcantonio ER, Mangione CM, Thomas EJ, Polanczyk CA, Cook EF, et al. Derivation and prospective validation of a simple index for prediction of cardiac risk of major noncardiac surgery. Circulation. 1999 Sep 7;100(10):1043–9. [Pubmed](https://www.ncbi.nlm.nih.gov/pubmed/10477528) [Original Article](http://circ.ahajournals.org/content/100/10/1043)
+
+<div style="text-align:centre">Page updated: 18 April 2018</div>
