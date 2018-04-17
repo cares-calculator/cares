@@ -22,6 +22,6 @@ Status: ongoing
 
 ClinicalTrials.gov ID: [NCT02921932](https://clinicaltrials.gov/ct2/show/NCT02921932)
 
-Frailty is a geriatric syndrome, defined as an increased vulnerability to stressors leading to a state of decreased physiological resistance. It is more prevalent among the older adult population and is associated with up to a threefold increased risk of mortality or major morbidity postsurgery. This study aims to study the efficacy of a preoperative "bundle" of interventions, which consists of preoperative physiotherapy, nutritional support and cognitive exercises on elderly frail patients undergoing major abdominal surgery, and evaluating their outcomes. 
+Frailty is a geriatric syndrome, defined as an increased vulnerability to stressors leading to a state of decreased physiological resistance. It is more prevalent among the older adult population and is associated with up to a threefold increased risk of mortality or major morbidity postsurgery. This prospective, single-centre, randomised controlled trial with two parallel arm study aims to evaluate the efficacy of a preoperative "bundle" of interventions, which consists of preoperative physiotherapy, nutritional support and cognitive exercises on elderly frail patients undergoing major abdominal surgery, and their postoperative outcomes. 
 
 Status: ongoing 
