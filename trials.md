@@ -7,3 +7,5 @@ Below are the trials that we are currently ongoing:
 ClinicalTrials.gov ID: [NCT03497416](https://clinicaltrials.gov/ct2/show/NCT03497416)
 
 Preoperative anemia is a known risk factor for morbidity, mortality and increased healthcare resource utilisation.  The main objective of this study single-centre prospective observational study is to investigate the perioperative morbidity and mortality, blood transfusion rate, healthcare outcomes and patient-centric outcomes among anemic elderly patients undergoing major surgery. 
+
+Status: ongoing ![green tick](/images/greentick.png)
