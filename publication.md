@@ -2,6 +2,7 @@ The Singapore General Hospital (SGH) Perioperative Center is active in research 
 *	<a href="#anemia">Preoperative anemia and blood management program</a> 
 * <a href="#complications">Prediction of postoperative complications</a>
 * <a href="#delirium">Postoperative delirium</a>
+*	<a href="#frail">Frail Elderly</a>
 *	<a href="#consent">Ethics surrounding informed consent in anaesthesia</a>
 *	<a href="#costeffective">Cost effective pre-operative investigation</a>
  
@@ -30,6 +31,11 @@ BMJ open 2018: 8 (3), e019427. [Original article](http://dx.doi.org/10.1136/bmjo
 * Protocol for a single-centre prospective observational study of postoperative delirium following total joint arthroplasties among South East Asians
 HR Abdullah, SRX Tan, SJ Lee, HRBA Razak, RH Seet, H Ying, E Sethi,Sim YE.
 BMJ open 2018: 8 (3), e019426. [Original article](http://bmjopen.bmj.com/content/8/3/e019426)
+
+<a name="delirium">**Frail Elderly**</a>
+
+* Protocol for a single-centre, randomised controlled study of a preoperative rehabilitation bundle in the frail and elderly undergoing abdominal surgery. Abdullah HR, Lien VP, Ong HK, Er PL, Hao Y, Khan SA, Liu CW. BMJ Open. 2017 Aug 4;7(8):e016815.
+[Original article](http://bmjopen.bmj.com/content/7/8/e016815)
 
 <a name="consent">**Ethics surrounding informed consent in anaesthesia**</a>
 * Defining reasonable patient standard and preference for shared decision making among patients undergoing anaesthesia in Singapore
