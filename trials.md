@@ -10,6 +10,8 @@ Below are the trials that are currently ongoing:
 >
 > Status: ongoing
 
+<hr/>
+
 > 2&#46; **Preoperative Intravenous Iron Infusion to Reduce Post-surgical Complications: a Pilot Randomised Control Trial (PIRCAS)**
 >
 > ClinicalTrials.gov ID: [NCT03295851](https://clinicaltrials.gov/ct2/show/NCT03295851)
@@ -17,6 +19,8 @@ Below are the trials that are currently ongoing:
 > Preoperative anemia leads to increased rates of perioperative blood transfusion, mortality, adverse cardiac and non-cardiac complications. This study is a randomised, open-label study to investigate the efficacy of intravenous iron compared to oral iron in patients with anemia undergoing major surgery to reduce surgical complications. 
 > 
 > Status: ongoing
+
+<hr/>
 
 >3&#46; **The Impact of Prehabilitation Bundle on Perioperative Outcome for Frail Elderly Patients Undergoing Major Abdominal Surgery**
 >
