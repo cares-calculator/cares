@@ -48,4 +48,4 @@ EY Sim, DJA Tan, HR Abdullah.
 International journal of medical informatics 2017: 108, 29-35. [Original article](http://dx.doi.org/10.1016/j.ijmedinf.2017.09.015)
 
 
-<p align="center">Site updated: 18 April 2018</p>
+<p style="text-align: center">Site updated: 18 April 2018</p>
