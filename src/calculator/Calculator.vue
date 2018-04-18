@@ -217,47 +217,47 @@ export default {
   data: {
     ageRanges: [
       ['< 30', 0],
-      ['30 - 49', 3],
-      ['50 - 74', 5],
-      ['75 - 84', 6],
-      ['≥ 85', 8],
+      ['30 - 49', 4],
+      ['50 - 74', 7],
+      ['75 - 84', 8],
+      ['≥ 85', 10],
     ],
 
     anaemiaScores: [
       ['None', 0],
-      ['Mild', 1],
-      ['Moderate/Severe', 3],
+      ['Mild', 2],
+      ['Moderate/Severe', 5],
     ],
 
     RDWScores: [
       ['≤ 15.7', 0],
-      ['> 15.7', 2],
+      ['> 15.7', 3],
     ],
 
     IHDScores: [
       ['No', 0],
-      ['Yes', 2],
+      ['Yes', 3],
     ],
 
     ASAScores: [
       ['ASA1/ASA2', 0],
-      ['ASA3', 4],
-      ['ASA4', 7],
+      ['ASA3', 7],
+      ['ASA4', 11],
     ],
 
     surgeryTypes: [
       ['Elective', 0],
-      ['Emergency', 3],
+      ['Emergency', 5],
     ],
 
     sexTypes: [
-      ['Male', 1],
+      ['Male', 2],
       ['Female', 0],
     ],
 
     chfTypes: [
       ['No', 0],
-      ['Yes', 1],
+      ['Yes', 2],
     ],
 
     ageScore: null,
@@ -353,8 +353,8 @@ export default {
     },
 
     surgicalRiskScore: function () {
-      return (this.procedure.selectedProcedureRisk === 'H') ? 2
-        : (this.procedure.selectedProcedureRisk === 'M') ? 2
+      return (this.procedure.selectedProcedureRisk === 'H') ? 5
+        : (this.procedure.selectedProcedureRisk === 'M') ? 5
         : (this.procedure.selectedProcedureRisk === 'L') ? 0
         : null
     },
