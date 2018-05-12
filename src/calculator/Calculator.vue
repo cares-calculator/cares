@@ -166,6 +166,23 @@
       </div> <!--column -->
     </div><!-- two-column -->
     <section markdown="0">
+      <strong>Score components</strong>
+      <table>
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="[type, score] in scoreComponents" :key="type">
+            <td>{{type}}</td>
+            <td style="text-align: center">{{score}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section markdown="0">
       <strong>Total score</strong> {{subtotalScore}}
       <div v-if="riskLevel === null">
         Please fill up all fields to compute the score
@@ -309,29 +326,31 @@ export default {
   computed: {
     scoreComponents: function () {
       return [
-        this.ageScore,
-        this.anaemiaScore,
-        this.RDWScore,
-        this.IHDScore,
-        this.chfType,
-        this.ASAScore,
-        this.surgicalRiskScore,
-        this.surgeryType,
-        this.sexType,
+        ['Elective/Emergency surgery', this.surgeryType],
+        ['Surgical risk', this.surgicalRiskScore],
+        ['Age', this.ageScore],
+        ['Sex', this.sexType],
+        ['RDW', this.RDWScore],
+        ['Anaemia', this.anaemiaScore],
+        ['ASA physical status', this.ASAScore],
+        ['Ischaemic heart disease', this.IHDScore],
+        ['Congestive heart failure', this.chfType],
       ]
     },
 
     subtotalScore: function () {
-      return this.scoreComponents.reduce(
-        function (x, y) {
-          return (x || 0) + (y || 0)
-        },
+      return this.scoreComponents
+      .map(s => s[1])
+      .reduce(
+        (x, y) => (x || 0) + (y || 0),
         0
       )
     },
 
-    totalScore: function () {
-      return this.scoreComponents.reduce(
+    totalScore () {
+      return this.scoreComponents
+      .map(s => s[1])
+      .reduce(
         function (x, y) {
           if (x === null || y === null) return null
           return x + y
