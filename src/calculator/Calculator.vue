@@ -20,49 +20,10 @@
           <div class="field">
             <div class="field-name">Surgical Procedure:</div>
 
-            <!-- not using components until we need something more complex -->
-            <input type="text"
-              v-if="procedure.selectedProcedure === null"
-              class="search-field"
-              ref="txt"
-              placeholder="Search for procedure, e.g. Aortic dissection" v-model="procedure.searchQuery"/>
+            <SurgeryTypeSelector
+              :value="procedure.selectedProcedure"
+              @input="procedure.selectedProcedure = $event" />
 
-            <div v-if="procedure.searchQuery"
-                style="height: 200px; overflow: auto; border: solid 1px black; max-height: 80vh">
-              <template v-for="[organ, procedureName, procedureRisk] in procedure.searchResults.slice(0, 200)">
-                <div class="search-result-entry"
-                  v-on:click="procedureSelectResult(organ, procedureName, procedureRisk)">
-                  {{ organ }} -- {{procedureName}}
-                </div>
-              </template>
-              <template v-if="procedure.searchResults.length > 200">
-                <div class="search-result-entry">
-                  <em>(... additional results hidden -- refine your search query)</em>
-                </div>
-              </template>
-            </div>
-
-            <div v-if="procedure.selectedProcedure !== null">
-                {{ procedure.selectedProcedure }}
-                <strong>({{ procedure.selectedProcedureRisk === 'H' ? 'High-risk'
-              : procedure.selectedProcedureRisk === 'M' ? 'Medium-risk'
-              : procedure.selectedProcedureRisk === 'L' ? 'Low-risk'
-              : 'N.A.'}})</strong>
-
-              <a href="#" v-on:click.prevent="
-              procedure.searchQuery = procedure.selectedProcedure,
-              procedure.selectedProcedure = null,
-              $nextTick(function () { this.$refs.txt.select() })
-              " style="font-size: 80%">Change...</a>
-
-              <div v-if="surgicalRiskScore === null" class="inline-info-style">
-                The selected surgical procedure is not covered by this risk calculator.
-              </div>
-
-            </div>
-            <div v-else>
-              <em>None selected</em>
-            </div>
           </div>
         </section>
 
@@ -166,6 +127,23 @@
       </div> <!--column -->
     </div><!-- two-column -->
     <section markdown="0">
+      <strong>Score components</strong>
+      <table class="score-components">
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="[type, score] in scoreComponents" :key="type">
+            <td>{{type}}</td>
+            <td style="text-align: center">{{score}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section markdown="0">
       <strong>Total score</strong> {{subtotalScore}}
       <div v-if="riskLevel === null">
         Please fill up all fields to compute the score
@@ -208,11 +186,12 @@
 </template>
 <script>
 import InlineInfo from './InlineInfo.vue'
-import SURGERY_TYPES from './surgeryTypes.js'
+import SurgeryTypeSelector from './SurgeryTypeSelector.vue'
 
 export default {
   components: {
     InlineInfo,
+    SurgeryTypeSelector,
   },
   data: {
     ageRanges: [
@@ -286,7 +265,6 @@ export default {
 
       selectedOrgan: null,
       selectedProcedure: null,
-      selectedProcedureRisk: null,
 
       searchResults: [],
     }
@@ -309,29 +287,31 @@ export default {
   computed: {
     scoreComponents: function () {
       return [
-        this.ageScore,
-        this.anaemiaScore,
-        this.RDWScore,
-        this.IHDScore,
-        this.chfType,
-        this.ASAScore,
-        this.surgicalRiskScore,
-        this.surgeryType,
-        this.sexType,
+        ['Elective/Emergency surgery', this.surgeryType],
+        ['Surgical risk', this.surgicalRiskScore],
+        ['Age', this.ageScore],
+        ['Sex', this.sexType],
+        ['RDW', this.RDWScore],
+        ['Anaemia', this.anaemiaScore],
+        ['ASA physical status', this.ASAScore],
+        ['Ischaemic heart disease', this.IHDScore],
+        ['Congestive heart failure', this.chfType],
       ]
     },
 
     subtotalScore: function () {
-      return this.scoreComponents.reduce(
-        function (x, y) {
-          return (x || 0) + (y || 0)
-        },
+      return this.scoreComponents
+      .map(s => s[1])
+      .reduce(
+        (x, y) => (x || 0) + (y || 0),
         0
       )
     },
 
-    totalScore: function () {
-      return this.scoreComponents.reduce(
+    totalScore () {
+      return this.scoreComponents
+      .map(s => s[1])
+      .reduce(
         function (x, y) {
           if (x === null || y === null) return null
           return x + y
@@ -353,21 +333,28 @@ export default {
     },
 
     surgicalRiskScore: function () {
-      return (this.procedure.selectedProcedureRisk === 'H') ? 5
-        : (this.procedure.selectedProcedureRisk === 'M') ? 5
-        : (this.procedure.selectedProcedureRisk === 'L') ? 0
+      return (this.selectedProcedureRisk === 'H') ? 5
+        : (this.selectedProcedureRisk === 'M') ? 5
+        : (this.selectedProcedureRisk === 'L') ? 0
         : null
     },
 
-  },
-  methods: {
-    procedureSelectResult(organ, procedureName, procedureRisk) {
-      this.procedure.selectedProcedure = organ + ' -- ' + procedureName
-      this.procedure.selectedProcedureRisk = procedureRisk.charAt(0)
-        .toUpperCase()
+    selectedProcedureRisk () {
+      return (this.procedure.selectedProcedure &&
+        this.procedure.selectedProcedure[2])
+        ? this.procedure.selectedProcedure[2].charAt(0).toUpperCase()
+        : null
+    }
 
-      this.procedure.searchQuery = ''
-    },
-  }
+  },
 }
 </script>
+
+<style>
+table.score-components tbody tr:nth-child(even) td{
+  background-color: #FFF;
+}
+table.score-components tbody tr:nth-child(odd) td{
+  background-color: #DDD;
+}
+</style>
