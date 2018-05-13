@@ -9,11 +9,7 @@
         : 'N.A.'}})
       </strong>
 
-      <a href="#" v-on:click.prevent="
-      searchQuery = text(value),
-      $emit('input', null),
-      $nextTick(function () { this.$refs.txt.select() })
-      " style="font-size: 80%">Change...</a>
+      <a href="#" v-on:click.prevent="clearValue" style="font-size: 80%">Change...</a>
 
       <div v-if="risk === null" class="inline-info-style">
         The selected surgical procedure is not covered by this risk calculator.
@@ -24,8 +20,11 @@
     </div>
 
     <div v-if="!value">
-      <input type="text" class="search-query-box" v-model="searchQuery"
-        ref="txt" />
+      <div class="search-query-box">
+        <input type="text" v-model="searchQuery"
+          ref="txt" />
+        <button @click="clearQuery">×</button>
+      </div>
 
       <div class="search-results">
         <div v-for="(category, index) in limitedQueryResults" :key="index"
@@ -48,10 +47,20 @@
 <style>
   .search-query-box {
     width: 100%;
-    display: block;
+    display: flex;
+    border: solid 1px #888;
+  }
+  .search-query-box input {
+    flex: 1 1 auto;
+    border: none;
+  }
+  .search-query-box button {
+    flex: 0 0 auto;
+    border: none;
+    background: transparent;
   }
   .search-results {
-    max-height: 0.7vh;
+    max-height: 70vh;
     height: 240px;
     overflow: auto;
     border: solid 1px #888;
@@ -136,6 +145,17 @@ export default {
   methods: {
     text (v) {
       return `${v[0]} - ${v[1]}`
+    },
+
+    clearValue () {
+      this.searchQuery = this.value[1]
+      this.$emit('input', null)
+      this.$nextTick(() => this.$refs.txt.select())
+    },
+
+    clearQuery () {
+      this.searchQuery = ''
+      this.$nextTick(() => this.$refs.txt.select())
     }
   }
 }
