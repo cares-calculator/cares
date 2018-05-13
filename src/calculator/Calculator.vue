@@ -128,7 +128,7 @@
     </div><!-- two-column -->
     <section markdown="0">
       <strong>Score components</strong>
-      <table>
+      <table class="score-components">
         <thead>
           <tr>
             <th>Component</th>
@@ -349,3 +349,12 @@ export default {
   },
 }
 </script>
+
+<style>
+table.score-components tbody tr:nth-child(even) td{
+  background-color: #FFF;
+}
+table.score-components tbody tr:nth-child(odd) td{
+  background-color: #DDD;
+}
+</style>
