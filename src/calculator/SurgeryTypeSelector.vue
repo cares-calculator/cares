@@ -51,7 +51,8 @@
     display: block;
   }
   .search-results {
-    max-height: 300px;
+    max-height: 0.7vh;
+    height: 240px;
     overflow: auto;
     border: solid 1px #888;
   }
