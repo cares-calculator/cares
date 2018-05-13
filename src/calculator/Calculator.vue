@@ -128,7 +128,7 @@
     </div><!-- two-column -->
     <section markdown="0">
       <strong>Score components</strong>
-      <table class="score-components">
+      <table class="score-components striped">
         <thead>
           <tr>
             <th>Component</th>
@@ -150,48 +150,83 @@
       </div>
       <div v-else>
         <dl>
-          <dt>30-day mortality risk (%):</dt>
-          <dd>{{ risks[riskLevel][2] }}</dd>
+          <dt>Risk:</dt>
+          <dd>{{risks[riskLevel][0]}}</dd>
 
-          <dt>Risk of post-operative ICU stay > 24h (%):</dt>
-          <dd>{{ risks[riskLevel][3] }}</dd>
+          <dt>30-day mortality risk:</dt>
+          <dd>{{ risks[riskLevel][3] }}%</dd>
+
+          <dt>Risk of post-operative ICU stay > 24h:</dt>
+          <dd>{{ risks[riskLevel][4] }}%</dd>
 
           <dt>Recommendation:</dt>
-          <dd v-if="riskLevel === 0">
-            Proceed with surgery
-          </dd>
-          <dd v-else-if="riskLevel === 1">
-            Search for modifiable risk factors and optimize if possible
-          </dd>
-          <dd v-else-if="riskLevel === 2">
-            <ol>
-              <li>Search for modifiable risk factors and optimize if possible.</li>
-              <li>Arrange for appropriate postoperative monitoring / clinical care</li>
-              <li>Plan for possible ICU admission/ High dependency care</li>
-            </ol>
-          </dd>
-          <dd v-else-if="riskLevel === 3">
-            <ol>
-              <li>Search for modifiable risk factors and optimize if possible.</li>
-              <li>Arrange for appropriate postoperative monitoring / clinical care</li>
-              <li>Plan for possible ICU admission/ High dependency care</li>
-              <li>Consider alternative surgical or non-surgical options if appropriate</li>
-              <li>Strongly consider not proceeding without availability of ICU bed.</li>
-            </ol>
+          <dd>
+            <RiskRecommendation :riskLevel="riskLevel" />
           </dd>
         </dl>
       </div><!--column-->
+
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+
+      <div v-if="!showRecommendationChart">
+        <small>
+        <a href="#" @click.prevent="showRecommendationChart = true">
+          &raquo; Show Chart
+        </a>
+        </small>
+      </div>
+      <div v-else>
+        <small>
+        <a href="#" @click.prevent="showRecommendationChart = false">
+          &laquo; Hide Chart
+        </a>
+        </small>
+      </div>
+      <transition name="expand">
+        <div v-if="showRecommendationChart">
+          <table class="risk-chart striped">
+            <thead>
+              <tr>
+                <th>Score</th>
+                <th>Risk</th>
+                <th>30-day mortality risk (%)</th>
+                <th>Risk of post-operative ICU stay >24h (%)</th>
+                <th>Recommendations</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="level in [0, 1, 2, 3]" :key="level">
+                <td v-if="level === 3">
+                  > 31
+                </td>
+                <td v-else>
+                  {{ risks[level][1] }}&nbsp;&mdash;&nbsp;{{ risks[level][2] }}
+                </td>
+                <td>{{ risks[level][0] }}</td>
+                <td>{{ risks[level][3] }}</td>
+                <td>{{ risks[level][4] }}</td>
+                <td><RiskRecommendation :riskLevel="level" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </transition>
     </section>
   </div>
 </template>
 <script>
 import InlineInfo from './InlineInfo.vue'
 import SurgeryTypeSelector from './SurgeryTypeSelector.vue'
+import RiskRecommendation from './RiskRecommendation.vue'
 
 export default {
   components: {
     InlineInfo,
     SurgeryTypeSelector,
+    RiskRecommendation,
   },
   data: {
     ageRanges: [
@@ -250,11 +285,11 @@ export default {
 
 
     risks: [
-      // min, max, 30-day mortality risk, risk of post-operative, suggestion
-      [0,   10,    0,  0.1],
-      [11,  20,  0.2,  0.9],
-      [21,  30,  1.9,  4.9],
-      [31, 1e9, 11.5, 14.9],
+      // risk, min, max, 30-day mortality risk, risk of post-operative, suggestion
+      ['Low',           0,   10,    0,  0.1],
+      ['Low-Moderate',  11,  20,  0.2,  0.9],
+      ['Moderate-High', 21,  30,  1.9,  4.9],
+      ['High',          31, 1e9, 11.5, 14.9],
     ],
 
     procedure: {
@@ -267,7 +302,15 @@ export default {
       selectedProcedure: null,
 
       searchResults: [],
-    }
+    },
+
+    showRecommendationChart: false,
+    riskByRiskLevel: [
+      'Low',
+      'Low-Moderate',
+      'Moderate-High',
+      'High',
+    ]
   },
 
   watch: {
@@ -324,12 +367,11 @@ export default {
       if (this.totalScore === null) {
         return null
       }
-      for (let i = 0; i < this.risks.length; i++) {
-        const [min, max] = this.risks[i]
-        if (min <= this.totalScore && this.totalScore <= max) {
-          return i
-        }
-      }
+      return _.range(0, this.risks.length).find(i => {
+        const [level, min, max] = this.risks[i]
+
+        return (min <= this.totalScore && this.totalScore <= max)
+      })
     },
 
     surgicalRiskScore: function () {
@@ -351,10 +393,31 @@ export default {
 </script>
 
 <style>
-table.score-components tbody tr:nth-child(even) td{
+table.striped tbody tr:nth-child(even) td{
   background-color: #FFF;
 }
-table.score-components tbody tr:nth-child(odd) td{
+table.striped tbody tr:nth-child(odd) td{
   background-color: #DDD;
+}
+table.striped th, table.striped td {
+  border: solid 1px #AAA;
+  padding: 0.5em;
+}
+table.striped {
+  border-collapse: collapse;
+}
+
+table.risk-chart {
+  width: 90%;
+  margin: auto;
+}
+table.risk-chart th {
+  text-align: center;
+}
+table.risk-chart thead tr th,
+table.risk-chart tbody tr td,
+table.risk-chart tbody tr td div,
+table.risk-chart tbody tr td div li {
+  font-size: 12px;
 }
 </style>
