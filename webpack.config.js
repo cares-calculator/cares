@@ -25,6 +25,6 @@ module.exports = [
       path: path.join(__dirname, 'calculator'),
       filename: 'calculator.bundle.js',
     },
-    entry: path.join(__dirname, 'src/calculator/main.js'),
+    entry: ['babel-polyfill', path.join(__dirname, 'src/calculator/main.js')],
   }
 ]
