@@ -906,7 +906,7 @@ export default [
  ], 
  [
   "Anus", 
-  "tumour, Abdomino-Perineal Resection (open or lap)", 
+  "tumour, Abdomino-Perineal Resection (open or laproscopic)", 
   "Low"
  ], 
  [
@@ -921,7 +921,7 @@ export default [
  ], 
  [
   "Appendix", 
-  "Appendiceal tumour, Right Hemicolectomy With or Without Adhesiolysis (open or lap)", 
+  "Appendiceal tumour, Right Hemicolectomy With or Without Adhesiolysis (open or laproscopic)", 
   "Moderate"
  ], 
  [
@@ -1306,12 +1306,12 @@ export default [
  ], 
  [
   "Gallbladder", 
-  "cholecystectomy, choledochotomy, common bile duct exploration with choledocho-duodenostomy (open or lap)", 
+  "cholecystectomy, choledochotomy, common bile duct exploration with choledocho-duodenostomy (open or laproscopic)", 
   "Moderate"
  ], 
  [
   "Gallbladder", 
-  "Cholecystectomy (open or lap)", 
+  "Cholecystectomy (open or laproscopic)", 
   "Moderate"
  ], 
  [
@@ -1321,12 +1321,12 @@ export default [
  ], 
  [
   "Gallbladder", 
-  "cholecystectomy and repair of cholecysto-enteric or  cholecysto-choledochal fistula (open or lap)", 
+  "cholecystectomy and repair of cholecysto-enteric or  cholecysto-choledochal fistula (open or laproscopic)", 
   "Moderate"
  ], 
  [
   "Gallbladder", 
-  "cholecystectomy with intraoperative cholangiogram (open or lap)", 
+  "cholecystectomy with intraoperative cholangiogram (open or laproscopic)", 
   "Moderate"
  ], 
  [
@@ -1456,7 +1456,7 @@ export default [
  ], 
  [
   "Liver", 
-  "Liver Abscess, Trans-Abdominal Drainage (open or lap)", 
+  "Liver Abscess, Trans-Abdominal Drainage (open or laproscopic)", 
   "Moderate"
  ], 
  [
@@ -1526,12 +1526,12 @@ export default [
  ], 
  [
   "Liver", 
-  "Lobectomy (3 - 4 segments), open or lap", 
+  "Lobectomy (3 - 4 segments), open or laproscopic", 
   "High"
  ], 
  [
   "Liver", 
-  "Partial Lobectomy or Segmental Resection (open or lap)", 
+  "Partial Lobectomy or Segmental Resection (open or laproscopic)", 
   "High"
  ], 
  [
@@ -1541,7 +1541,7 @@ export default [
  ], 
  [
   "Liver", 
-  "Wedge or Local Excision (open or lap)", 
+  "Wedge or Local Excision (open or laproscopic)", 
   "Moderate"
  ], 
  [
@@ -2191,7 +2191,7 @@ export default [
  ], 
  [
   "Adrenal", 
-  "Biopsy or Excision (open or lap)", 
+  "Biopsy or Excision (open or laproscopic)", 
   "High"
  ], 
  [
@@ -6915,7 +6915,7 @@ export default [
   "Low"
  ], 
  [
-  "Joints (Shoulder)", 
+  "Shoulder", 
   "Impingement Syndrome", 
   "Low"
  ], 
@@ -6925,12 +6925,12 @@ export default [
   "Low"
  ], 
  [
-  "Joints (Temporomandibular)", 
+  "Joints (Temporo-mandibular)", 
   "Arthrocentesis (unilateral or bilateral)", 
   "Low"
  ], 
  [
-  "Joints (Temporomandibular)", 
+  "Joints (Temporo-mandibular)", 
   "Arthroscopy (unilateral or bilateral)", 
   "Moderate"
  ], 
@@ -7020,7 +7020,7 @@ export default [
   "Low"
  ], 
  [
-  "Joints (Wrist)", 
+  "Wrist", 
   "Arthrodesis", 
   "Low"
  ], 
@@ -7706,7 +7706,7 @@ export default [
  ], 
  [
   "Shoulder", 
-  "Deformities,  Deformities, Osteotomies with Plate Fixation and with or w or o Fluoroscopy and with or without bone graft", 
+  "Deformities,  Deformities, Osteotomies with Plate Fixation and with or without Fluoroscopy and with or without bone graft", 
   "Moderate"
  ], 
  [
