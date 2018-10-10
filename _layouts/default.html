@@ -2,6 +2,10 @@
 <html lang="{{ site.lang | default: "en-US" }}">
 
   <head>
+    <!-- X-UA-Compatible must be the first META tag, and must precede any
+         CSS and SCRIPT in order for Compatibility View to be totally overriden -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121643692-1"></script>
     <script>
@@ -13,7 +17,6 @@
     </script>
 
     <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <meta name="description" content="{{ site.title | default: site.github.repository_name }} : {{ site.description | default: site.github.project_tagline }}">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
